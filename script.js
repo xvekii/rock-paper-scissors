@@ -8,3 +8,7 @@ function getComputerChoice(max) {
 }
 
 console.log(getComputerChoice(3));
+
+function playRound(playerSelection, computerSelection) {
+  
+}

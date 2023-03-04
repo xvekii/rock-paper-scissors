@@ -1,13 +1,11 @@
 
-// "Computer": randomly returns Rock Paper Scissors
+// "Computer": randomly returns "rock" "paper" "scissors"
 let arr = ["rock", "paper", "scissors"];
 
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
 }
-
-// console.log(getComputerChoice(3));
 
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
@@ -42,7 +40,6 @@ function playRound(playerSelection, computerSelection) {
     return "Error";
   } 
 }
-
 game();
 
 function game() {
@@ -73,46 +70,3 @@ function game() {
     console.log("No One Wins!");
   }
 } 
-
-
-
-
-
-
-
-//   let playerScore = 0;
-//   let computerScore = 0;
-  
-//   for (let i = 0; i < 5; i++) {
-  
-//     let result = playRound(playerSelection, computerSelection);
-    
-//     if (result == "playerWin") {
-//       console.log("You win, hoe!");
-//       playerScore++;
-//     } else if (result == "computerWin") {
-//       console.log("You lose, b33cH!");
-//       computerScore++;
-//     } else {
-//       console.log("Tie!");
-//     }
-//   }
-//   return "Game over";
-// }
-
-
-
-
-// function winner(computerScore, playerScore) {
-//   if (computerScore > playerScore) {
-//     console.log("Computer Wins!");
-//   } else if (playerScore > computerScore){
-//     console.log("Player Wins!");
-//   } else {
-//     console.log("No One Wins!");
-//   }
-// }
-
-// function winner(game()) {
-// console.log("The winner is ");
-// }

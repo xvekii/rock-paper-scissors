@@ -16,8 +16,11 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   computerSelection = computerSelection.toLowerCase();
   
+  // Player winning conditions
+  if ((playerSelection == "rock") && (computerSelection == "scissors")) {
+    return "You Win! Rock beats Scissors!";
+  }
   
-  // 1st condition if pS == R && cS == P
-  
+
   // return "You Lose! Paper beats Rock"
 }

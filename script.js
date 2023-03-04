@@ -7,22 +7,40 @@ function getComputerChoice(max) {
   return arr[temp];
 }
 
-console.log(getComputerChoice(3));
+// console.log(getComputerChoice(3));
 
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
   
   // arrange the case insensitivenesss
   playerSelection.toLowerCase();
-  // console.log(playerSelection);
-  
   
   // Player winning conditions
-  if (playerSelection == "rock" && computerSelection == "scissors") {
+  if ((playerSelection == "rock") && (computerSelection == "scissors")) {
     return "You Win! Rock beats Scissors!";
+  } else if ((playerSelection == "paper") && (computerSelection == "rock")) {
+    return "You Win! Paper beats Rock!";
+  } else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
+    return "You Win! Scissors beat Paper!";
+  
+    // Computer winning conditions
+  } else if ((computerSelection == "rock") && (playerSelection == "scissors")) {
+    return "You Lose! Rock beats Scissors!";
+  } else if ((computerSelection == "paper") && (playerSelection == "rock")) {
+    return "You Lose! Paper beats Rock!";
+  } else if ((computerSelection == "scissors") && (playerSelection == "paper")) {
+    return "You Lose! Scissors beat Paper!";
+  } else if (computerSelection == playerSelection){
+    return "It's a Tie!";
+  } else {
+    return "Game over";
   }
+  
 }
-playerSelection = "rock";
-computerSelection = getComputerChoice();
+const playerSelection = "rock";
+console.log("Player: " + (playerSelection));
+
+const computerSelection = getComputerChoice(3);
+console.log("Computer: " + (computerSelection));
+
 console.log(playRound(playerSelection, computerSelection));
-  // return "You Lose! Paper beats Rock"

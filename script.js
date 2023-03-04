@@ -55,18 +55,23 @@ function game() {
     let result = playRound();
     
     if (result == "playerWin") {
-      console.log("You win, hoe!");
+      console.log("You win!");
       playerScore++;
     } else if (result == "computerWin") {
-      console.log("You lose, b33cH!");
+      console.log("You lose!");
       computerScore++;
     } else {
       console.log("Tie!");
     }
     console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   }
-  return "Game over";
-  
+  if (computerScore > playerScore) {
+    console.log("Final Winner: Computer!");
+  } else if (playerScore > computerScore){
+    console.log("Final Winner: Player!");
+  } else {
+    console.log("No One Wins!");
+  }
 } 
 
 

@@ -13,14 +13,16 @@ console.log(getComputerChoice(3));
 function playRound(playerSelection, computerSelection) {
   
   // arrange the case insensitivenesss
-  playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.toLowerCase();
+  playerSelection.toLowerCase();
+  console.log(playerSelection);
+  
   
   // Player winning conditions
-  if ((playerSelection == "rock") && (computerSelection == "scissors")) {
+  if (playerSelection == "rock") {
     return "You Win! Rock beats Scissors!";
   }
-  
-
-  // return "You Lose! Paper beats Rock"
 }
+playerSelection = "rock";
+computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+  // return "You Lose! Paper beats Rock"

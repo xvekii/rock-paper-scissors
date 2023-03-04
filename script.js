@@ -1,6 +1,6 @@
 
 // "Computer": randomly returns Rock Paper Scissors
-let arr = ["Rock", "Paper", "Scissors"];
+let arr = ["rock", "paper", "scissors"];
 
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
@@ -14,11 +14,11 @@ function playRound(playerSelection, computerSelection) {
   
   // arrange the case insensitivenesss
   playerSelection.toLowerCase();
-  console.log(playerSelection);
+  // console.log(playerSelection);
   
   
   // Player winning conditions
-  if (playerSelection == "rock") {
+  if (playerSelection == "rock" && computerSelection == "scissors") {
     return "You Win! Rock beats Scissors!";
   }
 }

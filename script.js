@@ -47,13 +47,13 @@ game();
 
 function game() {
   
+  let playerScore = 0;
+  let computerScore = 0;
+  
   for (let i = 0; i < 5; i++) {
     
-    let playerScore = 0;
-    let computerScore = 0;
-    
     let result = playRound();
-
+    
     if (result == "playerWin") {
       console.log("You win, hoe!");
       playerScore++;
@@ -63,6 +63,7 @@ function game() {
     } else {
       console.log("Tie!");
     }
+    console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   }
   return "Game over";
   

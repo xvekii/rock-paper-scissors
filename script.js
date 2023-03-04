@@ -12,7 +12,6 @@ function getComputerChoice(max) {
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
   
-  // arrange the case insensitivenesss
   playerSelection.toLowerCase();
   
   // Player winning conditions
@@ -23,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
   } else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
     return "You Win! Scissors beat Paper!";
   
-    // Computer winning conditions
+  // Computer winning conditions
   } else if ((computerSelection == "rock") && (playerSelection == "scissors")) {
     return "You Lose! Rock beats Scissors!";
   } else if ((computerSelection == "paper") && (playerSelection == "rock")) {
@@ -44,3 +43,7 @@ const computerSelection = getComputerChoice(3);
 console.log("Computer: " + (computerSelection));
 
 console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+  
+}

@@ -1,6 +1,6 @@
 
 // "Computer": randomly returns "rock" "paper" "scissors"
-let arr = ["rock", "paper", "scissors"];
+const arr = ["rock", "paper", "scissors"];
 
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);

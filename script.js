@@ -42,7 +42,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
   
-  for (let i = 0; i < 5; i++) {
+  // for (let i = 0; i < 5; i++) {
     
     let result = playRound();
     
@@ -56,7 +56,7 @@ function game() {
       console.log("Tie!");
     }
     console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
-  }
+  // }
   if (computerScore > playerScore) {
     console.log("Final Winner: Computer!");
   } else if (playerScore > computerScore){

@@ -6,15 +6,11 @@ function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
 }
-
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
-  
   playerSelection = prompt("Enter Your Choice: ");
-
   computerSelection = getComputerChoice(3);
   console.log("Computer: " + (computerSelection));
-  
   playerSelection = playerSelection.toLowerCase();
 
   console.log("Player: " + (playerSelection));

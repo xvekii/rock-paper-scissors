@@ -36,7 +36,6 @@ function playRound(playerSelection, computerSelection) {
     return "Error";
   } 
 }
-game();
 
 function game() {
   
@@ -66,3 +65,4 @@ function game() {
     console.log("No One Wins!");
   }
 } 
+game();

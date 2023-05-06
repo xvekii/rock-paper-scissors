@@ -2,6 +2,9 @@
 // "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
 
+
+
+
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];

@@ -57,5 +57,8 @@ main {
   background-color: #073B4C;
   border: 2px dotted transparent;
   /* border: 2px dotted rgba(32, 39, 84, 1); */
+}
 
+.controls-container {
+  display: flex;
 }

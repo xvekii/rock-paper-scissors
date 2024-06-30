@@ -2,9 +2,6 @@
 // "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
 
-
-
-
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
@@ -41,7 +38,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  
   let playerScore = 0;
   let computerScore = 0;
   
@@ -60,6 +56,7 @@ function game() {
     }
     console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   // }
+  
   if (computerScore > playerScore) {
     console.log("Final Winner: Computer!");
   } else if (playerScore > computerScore){

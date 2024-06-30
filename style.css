@@ -60,16 +60,10 @@ main {
 }
 
 .controls-container {
+  margin-top: 100px;
   display: flex;
   gap: 15px;
 }
-
-/* .rps--button {
-  width: 1rem;
-  height: 1rem;
-  background-color: rgba(6, 214, 160, 0.69);
-  border-radius: 100%;
-} */
 
 .rps--button {
   display: flex;
@@ -79,4 +73,6 @@ main {
   height: 5rem;
   background-color: rgba(6, 214, 160, 0.69);
   border-radius: 100%;
+  border: 2px solid rgba(7, 59, 76, 0.54);
+  box-shadow: 5px 4px 1px 1px rgba(0, 0, 0, 0.38);
 }

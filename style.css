@@ -3,32 +3,21 @@
 }
 
 body {
-  margin: 0;
+  margin: 10;
   background-color: #073B4C;
   font-family: 'Bahianita', cursive;
 }
 
 h1 {
-/* ROCK PAPER SCISSORS */
-
-position: absolute;
-width: 655px;
-height: 154px;
-left: calc(50% - 655px/2 - 0.5px);
-top: 0px;
-
+margin: 0 auto;
+max-width: 100%;
+text-align: center;
 font-family: 'Bahianita';
 font-style: normal;
 font-weight: 400;
-font-size: 128px;
-line-height: 154px;
-/* identical to box height */
-
+font-size: 8em;
 color: rgba(239, 71, 111, 0.9);
 
 outline: 5px solid #000000;
-
-
-
 
 }

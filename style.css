@@ -24,3 +24,36 @@ color: rgba(239, 71, 111, 0.9);
 /* outline: 5px solid #000000; */
 
 }
+
+main {
+  min-height: 100vh;
+  max-width: 60%;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+}
+
+.monitor {
+  /* max-width: 80%; */
+  border: 5px solid rgba(32, 39, 84, 1);
+  background-color: rgba(84, 93, 112, 0.42);
+  padding: 4rem;
+  height: 250px;
+}
+
+.monitor.left,
+.monitor.right {
+  min-width: 250px;
+}
+
+.monitor.center {
+  width: 15%;
+  background-color: #073B4C;
+  border: 2px solid rgba(32, 39, 84, 1);
+
+}

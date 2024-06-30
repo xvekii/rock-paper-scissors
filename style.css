@@ -52,17 +52,24 @@ main {
   box-shadow: 6px 6px 1px 1px rgba(0, 0, 0, 0.38)
 }
 
-.monitor-left-para {
-  margin-top: 24px;
-  /* border: 7px solid #2d4a5b; */
-  border-radius: 20px;
+.monitor-left-para, .monitor-right-para {
+  margin-top: 7px;
+  /* border-radius: 20px; */
   font-size: 2rem;
   border-top-style: none;
-  color: rgba(255, 209, 102, 1);
-  border-bottom-style: double;
+  /* border-right-style: dotted; */
+  /* border-bottom-style: double; */
   border-left-style: none;
   background-color: #00000000;
   box-shadow: 6px 6px 1px 1px rgba(0, 0, 0, 0.38)
+}
+
+.monitor-left-para {
+  color: rgba(255, 209, 102, 1);
+}
+
+.monitor-right-para {
+  color: rgba(210, 199, 204, 1);
 }
 
 .monitor.center {

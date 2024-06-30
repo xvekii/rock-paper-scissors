@@ -61,4 +61,22 @@ main {
 
 .controls-container {
   display: flex;
+  gap: 15px;
+}
+
+/* .rps--button {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(6, 214, 160, 0.69);
+  border-radius: 100%;
+} */
+
+.rps--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(6, 214, 160, 0.69);
+  border-radius: 100%;
 }

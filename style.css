@@ -28,7 +28,7 @@ color: rgba(239, 71, 111, 0.9);
 main {
   min-height: 100vh;
   max-width: 60%;
-  padding-top: 25px;
+  padding-top: 80px;
   margin: 0 auto;
 }
 
@@ -80,7 +80,7 @@ main {
 }
 
 .controls-container {
-  margin-top: 100px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

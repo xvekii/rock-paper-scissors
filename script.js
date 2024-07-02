@@ -8,7 +8,12 @@ function getComputerChoice(max) {
 }
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
-  playerSelection = prompt("Enter Your Choice: ");
+  // const buttonsContainer = document.querySelector(".controls-container");
+  // buttonsContainer.addEventListener("click", event => {
+  //   console.log(event);
+  // });
+  
+  // playerSelection = prompt("Enter Your Choice: ");
   computerSelection = getComputerChoice(3);
   console.log("Computer: " + (computerSelection));
   playerSelection = playerSelection.toLowerCase();

@@ -8,10 +8,10 @@ function getComputerChoice(max) {
 }
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
-  // const rockBtn = document.querySelector(".rock-btn");
-  // rockBtn.addEventListener("click", event => {
-  //   console.log(event.target);
-  // });
+  const rockBtn = document.querySelector(".rock-btn");
+  rockBtn.addEventListener("click", event => {
+    console.log("ahoy, matey!");
+  });
   
   // playerSelection = prompt("Enter Your Choice: ");
   computerSelection = getComputerChoice(3);

@@ -105,5 +105,6 @@ main {
 
 .rps--button:active {
   transform: translateY(4px);
-  box-shadow: 0 2px rgba(255, 209, 102, 1);
+  box-shadow: 0 3px rgba(255, 209, 102, 1);
+  background-color: rgba(247, 52, 214, 0.69);
 }

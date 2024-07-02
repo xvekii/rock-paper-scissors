@@ -99,12 +99,12 @@ main {
   box-shadow: 5px 4px 1px 1px rgba(0, 0, 0, 0.38);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .rps--button:active {
   transform: translateY(4px);
   box-shadow: 0 2px rgba(255, 209, 102, 1);
 }
-
-
 

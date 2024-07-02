@@ -79,8 +79,11 @@ main {
   /* border: 2px dotted rgba(32, 39, 84, 1); */
 }
 
+.announcements {
+  height: 60px;
+}
+
 .controls-container {
-  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

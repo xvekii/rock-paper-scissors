@@ -6,16 +6,35 @@ function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
 }
-// Plays a round and announces the winner
-function playRound() {
-  let playerSelection = "";
-  let computerSelection = "";
+
+let playerSelection = "";
+
+showChooseWeapon();
+getUserInput();
+
+function showChooseWeapon() {
+  const announcementsDiv = document.querySelector(".announcements");
+  announcementsDiv.textContent = "Choose Your Weapon!"  
+}
+
+function getUserInput() {
   const rockBtn = document.querySelector(".rock-btn");
+  
   rockBtn.addEventListener("click", () => {
     playerSelection = "rock";
+    console.log(playerSelection);
+    
+    if (playerSelection !== "") {
+      game();
+    }
   });
+}
+
+// Plays a round and announces the winner
+function playRound() {
+  let computerSelection = "";
   
-  console.log(playerSelection);
+  
   // playerSelection = prompt("Enter Your Choice: ");
   computerSelection = getComputerChoice(3);
   console.log("Computer: " + (computerSelection));
@@ -72,4 +91,3 @@ function game() {
     console.log("No One Wins!");
   }
 } 
-game();

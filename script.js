@@ -90,14 +90,17 @@ function game(result) {
     console.log("You win!");
     announcementsDiv.textContent = "Player Wins!";
     playerScore++;
+    removeAnnouncement();
     console.log(playerScore);
   } else if (result == "computerWin") {
     console.log("You lose!");
     announcementsDiv.textContent = "Computer Wins!";
     computerScore++;
+    removeAnnouncement();
   } else {
     console.log("It's a Tie!");
     announcementsDiv.textContent = "It's a Tie!";
+    removeAnnouncement();
   }
   console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   
@@ -112,9 +115,16 @@ function game(result) {
   } else if (playerScore === 5 && computerScore === 5) {
     console.log("No One Wins!");
     announcementsDiv.textContent = "The Game Is Tied!";
-  
   }
 } 
+
+function removeAnnouncement() {
+  setTimeout(() => {
+    announcementsDiv.textContent = "";
+  }, 1000);
+}
+
+
 
 // function removeEventListeners() {
 

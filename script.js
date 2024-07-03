@@ -6,15 +6,16 @@ const rockBtn = document.querySelector(".rock-btn");
 const paperBtn = document.querySelector(".paper-btn");
 const scissorsBtn = document.querySelector(".scissors-btn");
 
+const announcementsDiv = document.querySelector(".announcements");
+
 getUserInput()
 
 function getUserInput() {
   rockBtn.addEventListener("click", () => {
     let playerSelection = "rock";
     
-    const result = playRound(playerSelection);
-    console.log(result);
-
+    const roundResult = playRound(playerSelection);
+    const gameResult = game(roundResult);
     // return playerSelection;
   });
 }
@@ -29,7 +30,6 @@ showChooseWeapon();
 
 
 function showChooseWeapon() {
-  const announcementsDiv = document.querySelector(".announcements");
   announcementsDiv.textContent = "Choose Your Weapon!"  
 }
 
@@ -66,31 +66,44 @@ function playRound(playerSelection) {
   } 
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
-  for (let i = 0; i < 5; i++) {
+function game(result) {
+  
+
+  // for (let i = 0; i < 5; i++) {
     // let playerSelection = getUserInput()
     // let result = playRound(playerSelection);
     
-    if (result == "playerWin") {
-      console.log("You win!");
-      playerScore++;
-    } else if (result == "computerWin") {
-      console.log("You lose!");
-      computerScore++;
-    } else {
-      console.log("Tie!");
-    }
-    console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
-  }
-  
-  if (computerScore > playerScore) {
-    console.log("Final Winner: Computer!");
-  } else if (playerScore > computerScore){
-    console.log("Final Winner: Player!");
+  if (result == "playerWin") {
+    console.log("You win!");
+    playerScore++;
+    console.log(playerScore);
+  } else if (result == "computerWin") {
+    console.log("You lose!");
+    computerScore++;
   } else {
+    console.log("Tie!");
+  }
+  console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
+  // }
+  
+  if (computerScore > playerScore && computerScore === 5) {
+    console.log("Final Winner: Computer!");
+    announcementsDiv.textContent = "Computer Wins The Game!"
+    return;
+  } else if (playerScore > computerScore && playerScore === 5){
+    console.log("Final Winner: Player!");
+    announcementsDiv.textContent = "Player Wins The Game!"
+    return;
+  } else if (playerScore === 5 && computerScore === 5) {
     console.log("No One Wins!");
+    announcementsDiv.textContent = "The Game Is Tied!"
+    return;
   }
 } 
+
+// function removeEventListeners() {
+
+// }

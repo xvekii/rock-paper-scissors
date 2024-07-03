@@ -12,9 +12,25 @@ getUserInput()
 
 function getUserInput() {
   rockBtn.addEventListener("click", () => {
-    announcementsDiv.textContent = ""  
+    announcementsDiv.textContent = "";  
     let playerSelection = "rock";
     
+    const roundResult = playRound(playerSelection);
+    game(roundResult);
+  });
+
+  paperBtn.addEventListener("click", () => {
+    announcementsDiv.textContent = ""; 
+    let playerSelection = "paper"; 
+
+    const roundResult = playRound(playerSelection);
+    game(roundResult);
+  });
+
+  scissorsBtn.addEventListener("click", () => {
+    announcementsDiv.textContent = ""; 
+    let playerSelection = "scissors";
+
     const roundResult = playRound(playerSelection);
     game(roundResult);
   });

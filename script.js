@@ -69,13 +69,7 @@ function playRound(playerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 
-function game(result) {
-  
-
-  // for (let i = 0; i < 5; i++) {
-    // let playerSelection = getUserInput()
-    // let result = playRound(playerSelection);
-    
+function game(result) {  
   if (result == "playerWin") {
     console.log("You win!");
     playerScore++;
@@ -87,7 +81,6 @@ function game(result) {
     console.log("Tie!");
   }
   console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
-  // }
   
   if (computerScore > playerScore && computerScore === 5) {
     console.log("Final Winner: Computer!");

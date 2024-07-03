@@ -2,38 +2,41 @@
 // "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
 
+const rockBtn = document.querySelector(".rock-btn");
+const paperBtn = document.querySelector(".paper-btn");
+const scissorsBtn = document.querySelector(".scissors-btn");
+
+getUserInput()
+
+function getUserInput() {
+  rockBtn.addEventListener("click", () => {
+    let playerSelection = "rock";
+    
+    const result = playRound(playerSelection);
+    console.log(result);
+
+    // return playerSelection;
+  });
+}
+
+
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
 }
 
-let playerSelection = "";
-
 showChooseWeapon();
-getUserInput();
+
 
 function showChooseWeapon() {
   const announcementsDiv = document.querySelector(".announcements");
   announcementsDiv.textContent = "Choose Your Weapon!"  
 }
 
-function getUserInput() {
-  const rockBtn = document.querySelector(".rock-btn");
-  
-  rockBtn.addEventListener("click", () => {
-    playerSelection = "rock";
-    console.log(playerSelection);
-    
-    if (playerSelection !== "") {
-      game();
-    }
-  });
-}
 
 // Plays a round and announces the winner
-function playRound() {
+function playRound(playerSelection) {
   let computerSelection = "";
-  
   
   // playerSelection = prompt("Enter Your Choice: ");
   computerSelection = getComputerChoice(3);
@@ -66,10 +69,10 @@ function playRound() {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
-  
-  // for (let i = 0; i < 5; i++) {
-    
-    let result = playRound();
+
+  for (let i = 0; i < 5; i++) {
+    // let playerSelection = getUserInput()
+    // let result = playRound(playerSelection);
     
     if (result == "playerWin") {
       console.log("You win!");
@@ -81,7 +84,7 @@ function game() {
       console.log("Tie!");
     }
     console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
-  // }
+  }
   
   if (computerScore > playerScore) {
     console.log("Final Winner: Computer!");

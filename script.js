@@ -12,11 +12,11 @@ getUserInput()
 
 function getUserInput() {
   rockBtn.addEventListener("click", () => {
+    announcementsDiv.textContent = ""  
     let playerSelection = "rock";
     
     const roundResult = playRound(playerSelection);
-    const gameResult = game(roundResult);
-    // return playerSelection;
+    game(roundResult);
   });
 }
 

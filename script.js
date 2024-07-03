@@ -72,28 +72,31 @@ let computerScore = 0;
 function game(result) {  
   if (result == "playerWin") {
     console.log("You win!");
+    announcementsDiv.textContent = "Player Wins!";
     playerScore++;
     console.log(playerScore);
   } else if (result == "computerWin") {
     console.log("You lose!");
+    announcementsDiv.textContent = "Computer Wins!";
     computerScore++;
   } else {
-    console.log("Tie!");
+    console.log("It's a Tie!");
+    announcementsDiv.textContent = "It's a Tie!";
   }
   console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   
   if (computerScore > playerScore && computerScore === 5) {
     console.log("Final Winner: Computer!");
-    announcementsDiv.textContent = "Computer Wins The Game!"
-    return;
+    announcementsDiv.textContent = "Computer Wins The Game!";
+  
   } else if (playerScore > computerScore && playerScore === 5){
     console.log("Final Winner: Player!");
-    announcementsDiv.textContent = "Player Wins The Game!"
-    return;
+    announcementsDiv.textContent = "Player Wins The Game!";
+  
   } else if (playerScore === 5 && computerScore === 5) {
     console.log("No One Wins!");
-    announcementsDiv.textContent = "The Game Is Tied!"
-    return;
+    announcementsDiv.textContent = "The Game Is Tied!";
+  
   }
 } 
 

@@ -14,17 +14,16 @@ const SVGs = document.querySelectorAll("svg");
 const announcementsDiv = document.querySelector(".announcements");
 
 turnOnMonitors();
-let computerChoice = getUserInput();
-showChoiceInMonitors(computerChoice);
+getUserInput();
+showChoiceInMonitors();
 
-function showChoiceInMonitors(computerChoice) {
+function showChoiceInMonitors() {
   SVGs.forEach(item => {
     item.addEventListener("click", () => {
       monitorLeftSpan.textContent = "";
       monitorRightSpan.textContent = "";
       let clickedSvgClone = item.cloneNode(true);
 
-      console.log(SVGs);
       monitorLeftSpan.appendChild(clickedSvgClone);
       removeMonitorContent();
     });
@@ -47,7 +46,6 @@ function getUserInput() {
     
     const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
-    return computerSelection;
   });
 
   paperBtn.addEventListener("click", () => {

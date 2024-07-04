@@ -9,21 +9,27 @@ const monitorLeft = document.querySelector(".monitor.left");
 const monitorRight = document.querySelector(".monitor.right");
 const monitorLeftSpan = document.querySelector(".monitor-left-span");
 const monitorRightSpan = document.querySelector(".monitor-right-span");
+const SVGs = document.querySelectorAll("svg");
 
 const announcementsDiv = document.querySelector(".announcements");
 
-turnOnMonitors()
-getUserInput()
+turnOnMonitors();
+let computerChoice = getUserInput();
+showChoiceInMonitors(computerChoice);
 
-document.querySelectorAll("svg").forEach(item => {
-  item.addEventListener("click", () => {
-    monitorLeftSpan.textContent = "";
-    let clone = item.cloneNode(true);
+function showChoiceInMonitors(computerChoice) {
+  SVGs.forEach(item => {
+    item.addEventListener("click", () => {
+      monitorLeftSpan.textContent = "";
+      monitorRightSpan.textContent = "";
+      let clickedSvgClone = item.cloneNode(true);
 
-    monitorLeftSpan.appendChild(clone);
-    removeMonitorContent();
-  })
-})
+      console.log(SVGs);
+      monitorLeftSpan.appendChild(clickedSvgClone);
+      removeMonitorContent();
+    });
+  });
+}
 
 function turnOnMonitors() {
   setTimeout(() => {
@@ -37,28 +43,31 @@ function getUserInput() {
   rockBtn.addEventListener("click", () => {
     announcementsDiv.textContent = "";  
     let playerSelection = "rock";
+    let computerSelection = getComputerChoice(3);
     
-    const roundResult = playRound(playerSelection);
+    const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
+    return computerSelection;
   });
 
   paperBtn.addEventListener("click", () => {
     announcementsDiv.textContent = ""; 
     let playerSelection = "paper"; 
-
-    const roundResult = playRound(playerSelection);
+    let computerSelection = getComputerChoice(3);
+    
+    const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
   });
 
   scissorsBtn.addEventListener("click", () => {
     announcementsDiv.textContent = ""; 
     let playerSelection = "scissors";
-
-    const roundResult = playRound(playerSelection);
+    let computerSelection = getComputerChoice(3);
+    
+    const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
   });
 }
-
 
 function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
@@ -72,10 +81,7 @@ function showChooseWeapon() {
 
 
 // Plays a round and announces the winner
-function playRound(playerSelection) {
-  let computerSelection = "";
-  
-  computerSelection = getComputerChoice(3);
+function playRound(playerSelection, computerSelection) {
   console.log("Computer: " + (computerSelection));
   console.log("Player: " + (playerSelection));
   

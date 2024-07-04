@@ -16,13 +16,9 @@ font-family: 'Bahianita';
 font-style: normal;
 font-weight: 400;
 font-size: 8em;
-/* -webkit-text-stroke: 1px black; */
 letter-spacing: 2px;
 text-shadow: black 6px 6px;
 color: rgba(239, 71, 111, 0.9);
-
-/* outline: 5px solid #000000; */
-
 }
 
 main {
@@ -42,23 +38,23 @@ main {
   /* max-width: 80%; */
   border: 5px solid rgb(32 37 67);
   background-color: rgba(84, 93, 112, 0.42);
-  padding: 4rem;
-  height: 200px;
+  width: 4rem;
+  height: 12rem;
 }
 
 .monitor.left,
 .monitor.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 250px;
   box-shadow: 6px 6px 1px 1px rgba(0, 0, 0, 0.38)
 }
 
 .monitor-left-para, .monitor-right-para {
   margin-top: 7px;
-  /* border-radius: 20px; */
   font-size: 2rem;
   border-top-style: none;
-  /* border-right-style: dotted; */
-  /* border-bottom-style: double; */
   border-left-style: none;
   background-color: #00000000;
   box-shadow: 6px 6px 1px 1px rgba(0, 0, 0, 0.38)
@@ -76,7 +72,6 @@ main {
   width: 15%;
   background-color: #073B4C;
   border: 2px dotted transparent;
-  /* border: 2px dotted rgba(32, 39, 84, 1); */
 }
 
 .announcements {

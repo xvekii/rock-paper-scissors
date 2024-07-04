@@ -5,10 +5,32 @@ const arr = ["rock", "paper", "scissors"];
 const rockBtn = document.querySelector(".rock-btn");
 const paperBtn = document.querySelector(".paper-btn");
 const scissorsBtn = document.querySelector(".scissors-btn");
+const monitorLeft = document.querySelector(".monitor.left");
+const monitorRight = document.querySelector(".monitor.right");
+const monitorLeftSpan = document.querySelector(".monitor-left-span");
+const monitorRightSpan = document.querySelector(".monitor-right-span");
 
 const announcementsDiv = document.querySelector(".announcements");
 
-getUserInput()
+turnOnMonitors()
+// getUserInput()
+
+document.querySelectorAll("svg").forEach(item => {
+  item.addEventListener("click", () => {
+    monitorLeftSpan.textContent = "";
+    let clone = item.cloneNode(true);
+    
+    monitorLeftSpan.appendChild(clone);
+  })
+})
+
+function turnOnMonitors() {
+  setTimeout(() => {
+    monitorLeft.style.backgroundColor = "#000000ad";
+    monitorRight.style.backgroundColor = "#000000ad";
+    showChooseWeapon();
+  }, 2000);
+}
 
 function getUserInput() {
   rockBtn.addEventListener("click", () => {
@@ -41,8 +63,6 @@ function getComputerChoice(max) {
   let temp = Math.floor(Math.random() * max);
   return arr[temp];
 }
-
-showChooseWeapon();
 
 
 function showChooseWeapon() {

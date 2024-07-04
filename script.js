@@ -13,7 +13,7 @@ const monitorRightSpan = document.querySelector(".monitor-right-span");
 const announcementsDiv = document.querySelector(".announcements");
 
 turnOnMonitors()
-// getUserInput()
+getUserInput()
 
 document.querySelectorAll("svg").forEach(item => {
   item.addEventListener("click", () => {

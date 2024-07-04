@@ -15,9 +15,9 @@ const announcementsDiv = document.querySelector(".announcements");
 
 turnOnMonitors();
 getUserInput();
-showChoiceInMonitors();
+showUserChoiceInMonitors();
 
-function showChoiceInMonitors() {
+function showUserChoiceInMonitors() {
   SVGs.forEach(item => {
     item.addEventListener("click", () => {
       monitorLeftSpan.textContent = "";
@@ -43,6 +43,7 @@ function getUserInput() {
     announcementsDiv.textContent = "";  
     let playerSelection = "rock";
     let computerSelection = getComputerChoice(3);
+    showComputerChoiceInMonitor(computerSelection);
     
     const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
@@ -52,6 +53,7 @@ function getUserInput() {
     announcementsDiv.textContent = ""; 
     let playerSelection = "paper"; 
     let computerSelection = getComputerChoice(3);
+    showComputerChoiceInMonitor(computerSelection);
     
     const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
@@ -61,10 +63,28 @@ function getUserInput() {
     announcementsDiv.textContent = ""; 
     let playerSelection = "scissors";
     let computerSelection = getComputerChoice(3);
+    showComputerChoiceInMonitor(computerSelection);
     
     const roundResult = playRound(playerSelection, computerSelection);
     game(roundResult);
   });
+}
+
+function showComputerChoiceInMonitor(selected) {
+  monitorRightSpan.textContent = "";
+  if (selected == "rock") {
+    let svgsSelection = SVGs[0];
+    let computerSelectedSVGClone = svgsSelection.cloneNode(true);
+    monitorRightSpan.appendChild(computerSelectedSVGClone);
+  } else if (selected == "paper") {
+    let svgsSelection = SVGs[1];
+    let computerSelectedSVGClone = svgsSelection.cloneNode(true);
+    monitorRightSpan.appendChild(computerSelectedSVGClone);
+  } else if (selected == "scissors") {
+    let svgsSelection = SVGs[2];
+    let computerSelectedSVGClone = svgsSelection.cloneNode(true);
+    monitorRightSpan.appendChild(computerSelectedSVGClone);
+  }
 }
 
 function getComputerChoice(max) {
@@ -144,6 +164,7 @@ function game(result) {
 function removeMonitorContent() {
   setTimeout(() => {
     monitorLeftSpan.textContent = "";
+    monitorRightSpan.textContent = "";
   }, 1000);
 }
 

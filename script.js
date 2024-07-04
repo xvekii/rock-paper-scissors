@@ -19,8 +19,9 @@ document.querySelectorAll("svg").forEach(item => {
   item.addEventListener("click", () => {
     monitorLeftSpan.textContent = "";
     let clone = item.cloneNode(true);
-    
+
     monitorLeftSpan.appendChild(clone);
+    removeMonitorContent();
   })
 })
 
@@ -74,10 +75,8 @@ function showChooseWeapon() {
 function playRound(playerSelection) {
   let computerSelection = "";
   
-  // playerSelection = prompt("Enter Your Choice: ");
   computerSelection = getComputerChoice(3);
   console.log("Computer: " + (computerSelection));
-
   console.log("Player: " + (playerSelection));
   
   // Player winning conditions
@@ -137,6 +136,12 @@ function game(result) {
     announcementsDiv.textContent = "The Game Is Tied!";
   }
 } 
+
+function removeMonitorContent() {
+  setTimeout(() => {
+    monitorLeftSpan.textContent = "";
+  }, 1000);
+}
 
 function removeAnnouncement() {
   setTimeout(() => {

@@ -9,8 +9,12 @@ const monitorLeft = document.querySelector(".monitor.left");
 const monitorRight = document.querySelector(".monitor.right");
 const monitorLeftSpan = document.querySelector(".monitor-left-span");
 const monitorRightSpan = document.querySelector(".monitor-right-span");
-const monitorLeftPara = document.querySelector("monitor-left-para");
-const monitorRightPara = document.querySelector("monitor-right-para");
+
+const monitorLeftPara = document.querySelector(".monitor-left-para");
+const monitorRightPara = document.querySelector(".monitor-right-para");
+const monitorLeftPointsSpan = document.querySelector(".monitor-left-points-span");
+const monitorRightPointsSpan = document.querySelector(".monitor-right-points-span");
+
 const SVGs = document.querySelectorAll("svg");
 
 const announcementsDiv = document.querySelector(".announcements");
@@ -135,12 +139,14 @@ function game(result) {
     console.log("You win!");
     announcementsDiv.textContent = "Player Wins!";
     playerScore++;
+    updatePoints(playerScore, computerScore);
     removeAnnouncement();
     console.log(playerScore);
   } else if (result == "computerWin") {
     console.log("You lose!");
     announcementsDiv.textContent = "Computer Wins!";
     computerScore++;
+    updatePoints(playerScore, computerScore);
     removeAnnouncement();
   } else {
     console.log("It's a Tie!");
@@ -162,6 +168,14 @@ function game(result) {
     announcementsDiv.textContent = "The Game Is Tied!";
   }
 } 
+
+function updatePoints(playerScore, computerScore) {
+  const userPoint = "🍉 ";
+  const computerPoint = "👾";
+  monitorLeftPointsSpan.textContent = `${userPoint.repeat(playerScore)}`;
+  monitorRightPointsSpan.textContent = `${computerPoint.repeat(computerScore)}`;
+}
+
 
 function removeMonitorContent() {
   setTimeout(() => {

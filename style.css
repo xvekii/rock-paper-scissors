@@ -62,10 +62,24 @@ main {
 
 .monitor-left-para {
   color: rgba(255, 209, 102, 1);
+  display: flex;
+  align-items: center;
+}
+
+.monitor-left-points-span {
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+.monitor-right-points-span {
+  margin-left: 0.6rem;
+  font-size: 1.8rem;
 }
 
 .monitor-right-para {
   color: rgba(210, 199, 204, 1);
+  display: flex;
+  align-items: center;
 }
 
 .monitor.center {

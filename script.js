@@ -9,6 +9,8 @@ const monitorLeft = document.querySelector(".monitor.left");
 const monitorRight = document.querySelector(".monitor.right");
 const monitorLeftSpan = document.querySelector(".monitor-left-span");
 const monitorRightSpan = document.querySelector(".monitor-right-span");
+const monitorLeftPara = document.querySelector("monitor-left-para");
+const monitorRightPara = document.querySelector("monitor-right-para");
 const SVGs = document.querySelectorAll("svg");
 
 const announcementsDiv = document.querySelector(".announcements");

@@ -14,10 +14,17 @@ const monitorLeftPara = document.querySelector(".monitor-left-para");
 const monitorRightPara = document.querySelector(".monitor-right-para");
 const monitorLeftPointsSpan = document.querySelector(".monitor-left-points-span");
 const monitorRightPointsSpan = document.querySelector(".monitor-right-points-span");
+const controlsContainer = document.querySelector(".controls-container");
 
 const SVGs = document.querySelectorAll("svg");
 
 const announcementsDiv = document.querySelector(".announcements");
+
+document.addEventListener("DOMContentLoaded", () => {
+  controlsContainer.toggleAttribute("inert");
+  showStartGame();
+});
+
 
 turnOnMonitors();
 getUserInput();
@@ -40,7 +47,7 @@ function turnOnMonitors() {
   setTimeout(() => {
     monitorLeft.style.backgroundColor = "#000000ad";
     monitorRight.style.backgroundColor = "#000000ad";
-    showChooseWeapon();
+    // showChooseWeapon();
   }, 2000);
 }
 
@@ -101,6 +108,12 @@ function getComputerChoice(max) {
 
 function showChooseWeapon() {
   announcementsDiv.textContent = "Choose Your Weapon!"  
+}
+
+function showStartGame() {
+  const startGameBtn = document.createElement("button");
+  startGameBtn.textContent = "Start A New Game";
+  announcementsDiv.appendChild(startGameBtn);
 }
 
 

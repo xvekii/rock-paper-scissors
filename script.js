@@ -1,6 +1,8 @@
 
 // "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
+const NORMAL_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(0, 0, 0, 0.38)";
+const PRESSED_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(239, 71, 111, 0.9)";
 
 const rockBtn = document.querySelector(".rock-btn");
 const paperBtn = document.querySelector(".paper-btn");
@@ -25,64 +27,74 @@ document.addEventListener("DOMContentLoaded", () => {
   startNewGameBtn.addEventListener("click", () => {
     turnOnMonitors();
     showChooseWeapon();
-    controlsContainer.style.display = "flex";
     startNewGameBtn.style.visibility = "hidden";
+    setTimeout(() => {
+      controlsContainer.style.display = "flex";
+    }, 500);
   });
 });
 
-
-getUserInput();
 showUserChoiceInMonitors();
 
 function showUserChoiceInMonitors() {
   SVGs.forEach(item => {
     item.addEventListener("click", () => {
-      monitorLeftSpan.textContent = "";
-      monitorRightSpan.textContent = "";
-      let clickedSvgClone = item.cloneNode(true);
+      if (!rockBtn.disabled && !paperBtn.disabled && !scissorsBtn.disabled) {
+        monitorLeftSpan.textContent = "";
+        monitorRightSpan.textContent = "";
+        let clickedSvgClone = item.cloneNode(true);
 
-      monitorLeftSpan.appendChild(clickedSvgClone);
-      removeMonitorContent();
+        monitorLeftSpan.appendChild(clickedSvgClone);
+        removeMonitorContent();
+      }  
     });
   });
 }
+
+function hideControls() {
+  controlsContainer.style.display = "none";
+}
+
 
 function turnOnMonitors() {
   monitorLeft.style.backgroundColor = "#000000ad";
   monitorRight.style.backgroundColor = "#000000ad";
 }
 
-function getUserInput() {
-  rockBtn.addEventListener("click", () => {
-    announcementsDiv.textContent = "";  
-    let playerSelection = "rock";
-    let computerSelection = getComputerChoice(3);
-    showComputerChoiceInMonitor(computerSelection);
-    
-    const roundResult = playRound(playerSelection, computerSelection);
-    game(roundResult);
-  });
 
-  paperBtn.addEventListener("click", () => {
-    announcementsDiv.textContent = ""; 
-    let playerSelection = "paper"; 
-    let computerSelection = getComputerChoice(3);
-    showComputerChoiceInMonitor(computerSelection);
-    
-    const roundResult = playRound(playerSelection, computerSelection);
-    game(roundResult);
-  });
+rockBtn.addEventListener("click", () => {
+  timeBlockControls();
+  announcementsDiv.textContent = "";  
+  let playerSelection = "rock";
+  let computerSelection = getComputerChoice(3);
+  showComputerChoiceInMonitor(computerSelection);
+  
+  const roundResult = playRound(playerSelection, computerSelection);
+  game(roundResult);
+});
 
-  scissorsBtn.addEventListener("click", () => {
-    announcementsDiv.textContent = ""; 
-    let playerSelection = "scissors";
-    let computerSelection = getComputerChoice(3);
-    showComputerChoiceInMonitor(computerSelection);
-    
-    const roundResult = playRound(playerSelection, computerSelection);
-    game(roundResult);
-  });
-}
+paperBtn.addEventListener("click", () => {
+  timeBlockControls();
+  announcementsDiv.textContent = ""; 
+  let playerSelection = "paper"; 
+  let computerSelection = getComputerChoice(3);
+  showComputerChoiceInMonitor(computerSelection);
+  
+  const roundResult = playRound(playerSelection, computerSelection);
+  game(roundResult);
+});
+
+scissorsBtn.addEventListener("click", () => {
+  timeBlockControls();
+  announcementsDiv.textContent = ""; 
+  let playerSelection = "scissors";
+  let computerSelection = getComputerChoice(3);
+  showComputerChoiceInMonitor(computerSelection);
+  
+  const roundResult = playRound(playerSelection, computerSelection);
+  game(roundResult);
+});
+
 
 function showComputerChoiceInMonitor(selected) {
   monitorRightSpan.textContent = "";
@@ -171,14 +183,17 @@ function game(result) {
   
   if (computerScore > playerScore && computerScore === 5) {
     console.log("Final Winner: Computer!");
+    hideControls();
     announcementsDiv.textContent = "Computer Wins The Game!";
   
   } else if (playerScore > computerScore && playerScore === 5){
     console.log("Final Winner: Player!");
+    hideControls();
     announcementsDiv.textContent = "Player Wins The Game!";
   
   } else if (playerScore === 5 && computerScore === 5) {
     console.log("No One Wins!");
+    hideControls();
     announcementsDiv.textContent = "The Game Is Tied!";
   }
 } 
@@ -195,17 +210,31 @@ function removeMonitorContent() {
   setTimeout(() => {
     monitorLeftSpan.textContent = "";
     monitorRightSpan.textContent = "";
-  }, 1000);
+  }, 2000);
 }
 
 function removeAnnouncement() {
   setTimeout(() => {
     announcementsDiv.textContent = "";
-  }, 1000);
+  }, 2000);
 }
 
+function timeBlockControls() {
+  rockBtn.disabled = true;
+  paperBtn.disabled = true; 
+  scissorsBtn.disabled = true;
+  
+  // rockBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
+  // paperBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW; 
+  // scissorsBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
 
+  setTimeout(() => {
+    rockBtn.disabled = false;
+    paperBtn.disabled = false; 
+    scissorsBtn.disabled = false;
 
-// function removeEventListeners() {
-
-// }
+    // rockBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
+    // paperBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW; 
+    // scissorsBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
+  }, 2500);
+}

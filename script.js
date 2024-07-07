@@ -15,16 +15,17 @@ const monitorRightPara = document.querySelector(".monitor-right-para");
 const monitorLeftPointsSpan = document.querySelector(".monitor-left-points-span");
 const monitorRightPointsSpan = document.querySelector(".monitor-right-points-span");
 const controlsContainer = document.querySelector(".controls-container");
+const startNewGameBtn = document.querySelector(".start-new-game-btn");
 
-const SVGs = document.querySelectorAll("svg");
-
+const SVGs = document.querySelectorAll(".rock-SVG, .paper-SVG, .scissors-SVG");
 const announcementsDiv = document.querySelector(".announcements");
 
-document.addEventListener("DOMContentLoaded", () => {
-  controlsContainer.toggleAttribute("inert");
 
-  showStartGame();
+document.addEventListener("DOMContentLoaded", () => {
+
 });
+
+
 
 
 turnOnMonitors();
@@ -112,7 +113,7 @@ function showChooseWeapon() {
 }
 
 function showStartGame() {
- 
+  startNewGameBtn.style.display = "flex";
 }
 
 

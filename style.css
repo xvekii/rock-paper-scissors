@@ -92,7 +92,7 @@ main {
 }
 
 .start-new-game-btn {
-  box-shadow: 6px 6px 6px 3px rgb(0 0 0), 14px 15px 5px 4px rgba(6, 214, 160, 0.69);
+  box-shadow: 7px 6px 3px 3px rgb(0 0 0), 14px 12px 4px 5px rgba(6, 214, 160, 0.69);
   border: none;
   position: absolute;
   border-radius: 34px;
@@ -126,7 +126,7 @@ main {
 }
 
 .controls-container {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 15px;

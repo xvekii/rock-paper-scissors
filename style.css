@@ -92,10 +92,8 @@ main {
 }
 
 .start-new-game-btn {
-  outline: 3px solid #EF476F;
-  outline-offset: -8px;
-  box-shadow: 6px 6px 5px 1px rgba(6, 214, 160, 0.69);
-  border: 5px solid #073b4c;
+  box-shadow: 6px 6px 6px 3px rgb(0 0 0), 14px 15px 5px 4px rgba(6, 214, 160, 0.69);
+  border: none;
   position: absolute;
   border-radius: 34px;
   padding: 1rem;
@@ -106,9 +104,13 @@ main {
   font-family: 'Bahianita';
   font-style: normal;
   font-weight: 400;
-  font-size: 4.5rem;
+  font-size: 4rem;
   background-color: #FFD166;
   color: black;
+}
+
+.start-game-span {
+  margin-left: 0.1rem;
 }
 
 .announcements {

@@ -22,6 +22,7 @@ const announcementsDiv = document.querySelector(".announcements");
 
 document.addEventListener("DOMContentLoaded", () => {
   controlsContainer.toggleAttribute("inert");
+
   showStartGame();
 });
 
@@ -111,9 +112,7 @@ function showChooseWeapon() {
 }
 
 function showStartGame() {
-  const startGameBtn = document.createElement("button");
-  startGameBtn.textContent = "Start A New Game";
-  announcementsDiv.appendChild(startGameBtn);
+ 
 }
 
 

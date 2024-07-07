@@ -96,7 +96,7 @@ main {
   border: none;
   position: absolute;
   border-radius: 34px;
-  padding: 1rem;
+  padding: 0.7rem;
   min-width: fit-content;
   display: flex;
   justify-content: center;
@@ -107,10 +107,12 @@ main {
   font-size: 4rem;
   background-color: #FFD166;
   color: black;
+  cursor: pointer;
 }
 
 .start-game-span {
-  margin-left: 0.1rem;
+  margin-left: -0.4rem;
+  margin-right: 0.1rem;
 }
 
 .announcements {

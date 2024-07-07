@@ -22,13 +22,15 @@ const announcementsDiv = document.querySelector(".announcements");
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
+  startNewGameBtn.addEventListener("click", () => {
+    turnOnMonitors();
+    showChooseWeapon();
+    controlsContainer.style.display = "flex";
+    startNewGameBtn.style.visibility = "hidden";
+  });
 });
 
 
-
-
-turnOnMonitors();
 getUserInput();
 showUserChoiceInMonitors();
 
@@ -46,11 +48,8 @@ function showUserChoiceInMonitors() {
 }
 
 function turnOnMonitors() {
-  setTimeout(() => {
-    monitorLeft.style.backgroundColor = "#000000ad";
-    monitorRight.style.backgroundColor = "#000000ad";
-    // showChooseWeapon();
-  }, 2000);
+  monitorLeft.style.backgroundColor = "#000000ad";
+  monitorRight.style.backgroundColor = "#000000ad";
 }
 
 function getUserInput() {
@@ -109,7 +108,9 @@ function getComputerChoice(max) {
 
 
 function showChooseWeapon() {
-  announcementsDiv.textContent = "Choose Your Weapon!"  
+  setTimeout(() => {
+    announcementsDiv.textContent = "Choose Your Weapon!"; 
+  }, 1000);  
 }
 
 function showStartGame() {

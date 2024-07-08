@@ -19,6 +19,7 @@ font-size: 8em;
 letter-spacing: 2px;
 text-shadow: black 6px 6px;
 color: rgba(239, 71, 111, 0.9);
+user-select: none;
 }
 
 main {
@@ -64,6 +65,7 @@ main {
   color: rgba(255, 209, 102, 1);
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 .monitor-left-points-span {
@@ -80,6 +82,7 @@ main {
   color: rgba(210, 199, 204, 1);
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 .monitor.center {
@@ -108,11 +111,14 @@ main {
   background-color: #FFD166;
   color: black;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .start-game-span {
   margin-left: -0.4rem;
   margin-right: 0.1rem;
+  user-select: none;
 }
 
 .announcements {
@@ -125,6 +131,7 @@ main {
   font-weight: 400;
   font-size: 2.5rem;
   color: darksalmon;
+  user-select: none;
 }
 
 .controls-container {
@@ -146,6 +153,7 @@ main {
   box-shadow: 5px 4px 1px 1px rgba(0, 0, 0, 0.38);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
   cursor: pointer;
+  user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
 }

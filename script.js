@@ -39,21 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-showUserChoiceInMonitors();
-
-function showUserChoiceInMonitors() {
-  SVGs.forEach(item => {
-    item.addEventListener("click", () => {
-      if (!rockBtn.disabled && !paperBtn.disabled && !scissorsBtn.disabled) {
-        monitorLeftSpan.textContent = "";
-        monitorRightSpan.textContent = "";
-        let clickedSvgClone = item.cloneNode(true);
-
-        monitorLeftSpan.appendChild(clickedSvgClone);
-        removeMonitorContent();
-      }  
-    });
-  });
+function removeMonitorContentImmediately() {
+  monitorLeftSpan.textContent = "";
+  monitorRightSpan.textContent = "";
 }
 
 function hideControls() {
@@ -71,9 +59,13 @@ rockBtn.addEventListener("click", () => {
   let playerSelection = "rock";
   let computerSelection = getComputerChoice(3);
   showComputerChoiceInMonitor(computerSelection);
-  
+
   const roundResult = playRound(playerSelection, computerSelection);
+  let clickedSvgClone = SVGs[0].cloneNode(true);
+  monitorLeftSpan.appendChild(clickedSvgClone);
+  
   game(roundResult);
+  removeMonitorContentTimeout();
 });
 
 paperBtn.addEventListener("click", () => {
@@ -84,7 +76,11 @@ paperBtn.addEventListener("click", () => {
   showComputerChoiceInMonitor(computerSelection);
   
   const roundResult = playRound(playerSelection, computerSelection);
+  let clickedSvgClone = SVGs[1].cloneNode(true);
+  monitorLeftSpan.appendChild(clickedSvgClone);
+  
   game(roundResult);
+  removeMonitorContentTimeout();
 });
 
 scissorsBtn.addEventListener("click", () => {
@@ -95,7 +91,12 @@ scissorsBtn.addEventListener("click", () => {
   showComputerChoiceInMonitor(computerSelection);
   
   const roundResult = playRound(playerSelection, computerSelection);
+
+  let clickedSvgClone = SVGs[2].cloneNode(true);
+  monitorLeftSpan.appendChild(clickedSvgClone);
+  
   game(roundResult);
+  removeMonitorContentTimeout();
 });
 
 
@@ -128,9 +129,6 @@ function showStartGame() {
 
 // Plays a round and announces the winner
 function playRound(playerSelection, computerSelection) {
-  console.log("Computer: " + (computerSelection));
-  console.log("Player: " + (playerSelection));
-  
   // Player winning conditions
   if ((playerSelection == "rock") && (computerSelection == "scissors")) {
     return "playerWin";
@@ -156,39 +154,32 @@ function playRound(playerSelection, computerSelection) {
 
 function game(result) {  
   if (result == "playerWin") {
-    console.log("You win!");
     announcementsDiv.textContent = "Player Wins!";
     playerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
     console.log(playerScore);
   } else if (result == "computerWin") {
-    console.log("You lose!");
     announcementsDiv.textContent = "Computer Wins!";
     computerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
   } else {
-    console.log("It's a Tie!");
     announcementsDiv.textContent = "It's a Tie!";
     removeAnnouncement();
   }
-  console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
   
   if (computerScore > playerScore && computerScore === 5) {
-    console.log("Final Winner: Computer!");
     hideControls();
     announcementsDiv.textContent = "Computer Wins The Game!";
     showStartGame();
   
   } else if (playerScore > computerScore && playerScore === 5){
-    console.log("Final Winner: Player!");
     hideControls();
     announcementsDiv.textContent = "Player Wins The Game!";
     showStartGame();
   
   } else if (playerScore === 5 && computerScore === 5) {
-    console.log("No One Wins!");
     hideControls();
     announcementsDiv.textContent = "The Game Is Tied!";
     showStartGame();
@@ -213,7 +204,7 @@ function showChooseWeapon() {
   }, 1000);  
 }
 
-function removeMonitorContent() {
+function removeMonitorContentTimeout() {
   setTimeout(() => {
     monitorLeftSpan.textContent = "";
     monitorRightSpan.textContent = "";

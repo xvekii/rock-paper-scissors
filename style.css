@@ -163,3 +163,77 @@ main {
   box-shadow: 0 3px rgba(255, 209, 102, 1);
   background-color: rgba(247, 52, 214, 0.69);
 }
+
+@media(min-width: 375px) {
+  h1 {
+    font-size: 3.7rem;
+  }
+
+  .start-new-game-btn {
+    padding: 0.5rem;
+    font-size: 2.2rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 10.3rem;
+  }
+
+  .monitor {
+    height: 9rem;
+  }
+
+  .container {
+    gap: 0.7rem;
+  }
+
+  .announcements {
+    font-size: 2.3rem;
+    color: darksalmon;
+    padding-top: 6rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 15px;
+    margin-top: 3rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 1.4rem;
+  }
+
+  .monitor-left-points-span, 
+  .monitor-right-points-span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+
+/* @media(max-width: 430px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 11rem;
+  }
+
+  .monitor {
+    height: 9rem;
+  }
+
+  .container {
+    gap: 1.4rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 1.4rem;
+  }
+
+  .monitor-left-points-span, 
+  .monitor-right-points-span {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+} */

@@ -19,12 +19,17 @@ const monitorRightPointsSpan = document.querySelector(".monitor-right-points-spa
 const controlsContainer = document.querySelector(".controls-container");
 const startNewGameBtn = document.querySelector(".start-new-game-btn");
 
+const RPSBtns = document.querySelectorAll(".rock-btn, .paper-btn, .scissors-btn");
 const SVGs = document.querySelectorAll(".rock-SVG, .paper-SVG, .scissors-SVG");
 const announcementsDiv = document.querySelector(".announcements");
 
+let playerScore = 0;
+let computerScore = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   startNewGameBtn.addEventListener("click", () => {
+    resetScore();
+    removePoints();
     turnOnMonitors();
     showChooseWeapon();
     startNewGameBtn.style.visibility = "hidden";
@@ -55,12 +60,10 @@ function hideControls() {
   controlsContainer.style.display = "none";
 }
 
-
 function turnOnMonitors() {
   monitorLeft.style.backgroundColor = "#000000ad";
   monitorRight.style.backgroundColor = "#000000ad";
 }
-
 
 rockBtn.addEventListener("click", () => {
   timeBlockControls();
@@ -118,15 +121,8 @@ function getComputerChoice(max) {
   return arr[temp];
 }
 
-
-function showChooseWeapon() {
-  setTimeout(() => {
-    announcementsDiv.textContent = "Choose Your Weapon!"; 
-  }, 1000);  
-}
-
 function showStartGame() {
-  startNewGameBtn.style.display = "flex";
+  startNewGameBtn.style.visibility = "visible";
 }
 
 
@@ -157,8 +153,6 @@ function playRound(playerSelection, computerSelection) {
   } 
 }
 
-let playerScore = 0;
-let computerScore = 0;
 
 function game(result) {  
   if (result == "playerWin") {
@@ -185,16 +179,19 @@ function game(result) {
     console.log("Final Winner: Computer!");
     hideControls();
     announcementsDiv.textContent = "Computer Wins The Game!";
+    showStartGame();
   
   } else if (playerScore > computerScore && playerScore === 5){
     console.log("Final Winner: Player!");
     hideControls();
     announcementsDiv.textContent = "Player Wins The Game!";
+    showStartGame();
   
   } else if (playerScore === 5 && computerScore === 5) {
     console.log("No One Wins!");
     hideControls();
     announcementsDiv.textContent = "The Game Is Tied!";
+    showStartGame();
   }
 } 
 
@@ -205,12 +202,27 @@ function updatePoints(playerScore, computerScore) {
   monitorRightPointsSpan.textContent = `${computerPoint.repeat(computerScore)}`;
 }
 
+function resetScore() {
+  playerScore = 0;
+  computerScore = 0;
+}
+
+function showChooseWeapon() {
+  setTimeout(() => {
+    announcementsDiv.textContent = "Choose Your Weapon!";
+  }, 1000);  
+}
 
 function removeMonitorContent() {
   setTimeout(() => {
     monitorLeftSpan.textContent = "";
     monitorRightSpan.textContent = "";
   }, 2000);
+}
+
+function removePoints() {
+  monitorLeftPointsSpan.textContent = "";
+  monitorRightPointsSpan.textContent = "";
 }
 
 function removeAnnouncement() {
@@ -224,6 +236,9 @@ function timeBlockControls() {
   paperBtn.disabled = true; 
   scissorsBtn.disabled = true;
   
+  // RPSBtns.forEach(btn => {
+  //   btn.style.backgroundColor = PRESSED_BTN_BOX_SHADOW;
+  // });
   // rockBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
   // paperBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW; 
   // scissorsBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
@@ -233,6 +248,9 @@ function timeBlockControls() {
     paperBtn.disabled = false; 
     scissorsBtn.disabled = false;
 
+    // RPSBtns.forEach(btn => {
+    //   btn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
+    // });
     // rockBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
     // paperBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW; 
     // scissorsBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;

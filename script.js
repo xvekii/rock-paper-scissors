@@ -245,5 +245,5 @@ function timeBlockControls() {
     // rockBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
     // paperBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW; 
     // scissorsBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
-  }, 2500);
+  }, 2000);
 }

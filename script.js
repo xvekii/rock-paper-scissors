@@ -4,6 +4,10 @@ const arr = ["rock", "paper", "scissors"];
 const NORMAL_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(0, 0, 0, 0.38)";
 const PRESSED_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(239, 71, 111, 0.9)";
 
+const MONITOR_WIN_COLOR = "rgba(6, 214, 160, 0.3)";
+const MONITOR_LOSS_COLOR = "rgba(239, 71, 111, 0.3)";
+const MONITOR_TIE_COLOR = "rgba(103, 58, 183, 0.3)";
+
 const rockBtn = document.querySelector(".rock-btn");
 const paperBtn = document.querySelector(".paper-btn");
 const scissorsBtn = document.querySelector(".scissors-btn");
@@ -151,21 +155,44 @@ function playRound(playerSelection, computerSelection) {
   } 
 }
 
+function changeMonitorColorPlayerWin() {
+  monitorLeft.style.backgroundColor = MONITOR_WIN_COLOR;
+  monitorRight.style.backgroundColor = MONITOR_LOSS_COLOR;
+}
+
+function changeMonitorColorComputerWin() {
+  monitorLeft.style.backgroundColor = MONITOR_LOSS_COLOR;
+  monitorRight.style.backgroundColor = MONITOR_WIN_COLOR;
+}
+
+function changeMonitorTie() {
+  monitorLeft.style.backgroundColor = MONITOR_TIE_COLOR;
+  monitorRight.style.backgroundColor = MONITOR_TIE_COLOR;
+}
+
+function resetMonitorColor() {
+  monitorLeft.style.backgroundColor = "rgba(0, 0, 0, 0.68)";
+  monitorRight.style.backgroundColor = "rgba(0, 0, 0, 0.68)";
+}
+
 
 function game(result) {  
   if (result == "playerWin") {
     announcementsDiv.textContent = "Player Wins!";
+    changeMonitorColorPlayerWin();
     playerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
     console.log(playerScore);
   } else if (result == "computerWin") {
     announcementsDiv.textContent = "Computer Wins!";
+    changeMonitorColorComputerWin();
     computerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
   } else {
     announcementsDiv.textContent = "It's a Tie!";
+    changeMonitorTie();
     removeAnnouncement();
   }
   
@@ -218,6 +245,7 @@ function removePoints() {
 
 function removeAnnouncement() {
   setTimeout(() => {
+    resetMonitorColor();
     announcementsDiv.textContent = "";
   }, 2000);
 }

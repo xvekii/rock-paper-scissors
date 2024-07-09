@@ -203,13 +203,13 @@ function game(result) {
   
   if (computerScore > playerScore && computerScore === 5) {
     hideControls();
-    announcementString = "Computer Wins The Game!";
+    announcementString = "Mwahahaha! 👾🤖👾";
     announceRoundWinner(announcementString);
     showStartGame();
   
   } else if (playerScore > computerScore && playerScore === 5){
     hideControls();
-    announcementString = "Player Wins The Game!";
+    announcementString = "You're The Best! 🍉🥳🍉";
     announceRoundWinner(announcementString);
     showStartGame();
   

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startNewGameBtn.style.visibility = "hidden";
     setTimeout(() => {
       controlsContainer.style.display = "flex";
-    }, 500);
+    }, 1000);
   });
 });
 
@@ -122,7 +122,7 @@ function getComputerChoice(max) {
 function showStartGame() {
   setTimeout(() =>  { 
     startNewGameBtn.style.visibility = "visible";
-  }, 2000);
+  }, 3200);
 }
 
 
@@ -170,40 +170,53 @@ function resetMonitorColor() {
   monitorRight.style.backgroundColor = "rgba(0, 0, 0, 0.68)";
 }
 
+function announceRoundWinner(string) {
+  setTimeout(() => {
+    announcementsDiv.textContent = `${string}`;
+  }, 500);
+}
+
 
 function game(result) {  
+  let announcementString = "";
   if (result == "playerWin") {
-    announcementsDiv.textContent = "Player Wins!";
+    announcementString = "Player Wins!";
     changeMonitorColorPlayerWin();
+    announceRoundWinner(announcementString);
     playerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
     console.log(playerScore);
   } else if (result == "computerWin") {
-    announcementsDiv.textContent = "Computer Wins!";
+    announcementString = "Computer Wins!";
     changeMonitorColorComputerWin();
+    announceRoundWinner(announcementString);
     computerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
   } else {
-    announcementsDiv.textContent = "It's a Tie!";
+    announcementString = "It's a Tie!";
     changeMonitorTie();
+    announceRoundWinner(announcementString);
     removeAnnouncement();
   }
   
   if (computerScore > playerScore && computerScore === 5) {
     hideControls();
-    announcementsDiv.textContent = "Computer Wins The Game!";
+    announcementString = "Computer Wins The Game!";
+    announceRoundWinner(announcementString);
     showStartGame();
   
   } else if (playerScore > computerScore && playerScore === 5){
     hideControls();
-    announcementsDiv.textContent = "Player Wins The Game!";
+    announcementString = "Player Wins The Game!";
+    announceRoundWinner(announcementString);
     showStartGame();
   
   } else if (playerScore === 5 && computerScore === 5) {
     hideControls();
-    announcementsDiv.textContent = "The Game Is Tied!";
+    announcementString = "The Game Is Tied!"
+    announceRoundWinner(announcementString);
     showStartGame();
   }
 } 
@@ -211,8 +224,10 @@ function game(result) {
 function updatePoints(playerScore, computerScore) {
   const userPoint = "🍉 ";
   const computerPoint = "👾";
-  monitorLeftPointsSpan.textContent = `${userPoint.repeat(playerScore)}`;
+  setTimeout(() => {
+    monitorLeftPointsSpan.textContent = `${userPoint.repeat(playerScore)}`;
   monitorRightPointsSpan.textContent = `${computerPoint.repeat(computerScore)}`;
+  }, 1600);
 }
 
 function resetScore() {
@@ -230,7 +245,7 @@ function removeMonitorContentTimeout() {
   setTimeout(() => {
     monitorLeftSpan.textContent = "";
     monitorRightSpan.textContent = "";
-  }, 2000);
+  }, 3000);
 }
 
 function removePoints() {
@@ -242,7 +257,7 @@ function removeAnnouncement() {
   setTimeout(() => {
     resetMonitorColor();
     announcementsDiv.textContent = "";
-  }, 2000);
+  }, 3000);
 }
 
 function timeBlockControls() {
@@ -254,5 +269,5 @@ function timeBlockControls() {
     rockBtn.disabled = false;
     paperBtn.disabled = false; 
     scissorsBtn.disabled = false;
-  }, 2000);
+  }, 3200);
 }

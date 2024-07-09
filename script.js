@@ -1,8 +1,6 @@
 
 // "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
-const NORMAL_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(0, 0, 0, 0.38)";
-const PRESSED_BTN_BOX_SHADOW = "5px 4px 1px 1px rgba(239, 71, 111, 0.9)";
 
 const MONITOR_WIN_COLOR = "rgba(6, 214, 160, 0.3)";
 const MONITOR_LOSS_COLOR = "rgba(239, 71, 111, 0.3)";
@@ -254,24 +252,10 @@ function timeBlockControls() {
   rockBtn.disabled = true;
   paperBtn.disabled = true; 
   scissorsBtn.disabled = true;
-  
-  // RPSBtns.forEach(btn => {
-  //   btn.style.backgroundColor = PRESSED_BTN_BOX_SHADOW;
-  // });
-  // rockBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
-  // paperBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW; 
-  // scissorsBtn.style["boxShadow"] = PRESSED_BTN_BOX_SHADOW;
 
   setTimeout(() => {
     rockBtn.disabled = false;
     paperBtn.disabled = false; 
     scissorsBtn.disabled = false;
-
-    // RPSBtns.forEach(btn => {
-    //   btn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
-    // });
-    // rockBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
-    // paperBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW; 
-    // scissorsBtn.style["boxShadow"] = NORMAL_BTN_BOX_SHADOW;
   }, 2000);
 }

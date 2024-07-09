@@ -41,11 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function removeMonitorContentImmediately() {
-  monitorLeftSpan.textContent = "";
-  monitorRightSpan.textContent = "";
-}
-
 function hideControls() {
   controlsContainer.style.display = "none";
 }

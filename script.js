@@ -261,9 +261,11 @@ function removeAnnouncement() {
 }
 
 function timeBlockControls() {
-  rockBtn.disabled = true;
-  paperBtn.disabled = true; 
-  scissorsBtn.disabled = true;
+  setTimeout(() => {
+    rockBtn.disabled = true;
+    paperBtn.disabled = true; 
+    scissorsBtn.disabled = true;
+  }, 90);
 
   setTimeout(() => {
     rockBtn.disabled = false;

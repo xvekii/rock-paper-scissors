@@ -120,7 +120,9 @@ function getComputerChoice(max) {
 }
 
 function showStartGame() {
-  startNewGameBtn.style.visibility = "visible";
+  setTimeout(() =>  { 
+    startNewGameBtn.style.visibility = "visible";
+  }, 2000);
 }
 
 

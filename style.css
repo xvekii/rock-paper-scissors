@@ -172,6 +172,7 @@ main {
 }
 
 
+
 @media (max-width: 359px) {
   h1 {
     font-size: 3.7rem;
@@ -221,6 +222,7 @@ main {
 }
 
 
+
 @media (min-width: 360px) {
   h1 {
     font-size: 3.7rem;
@@ -234,7 +236,7 @@ main {
   }
 
   .monitor.left, .monitor.right {
-    min-width: 9rem;
+    min-width: 9.6rem;
   }
 
   .monitor {
@@ -263,10 +265,11 @@ main {
 
   .monitor-left-points-span, 
   .monitor-right-points-span {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-left: 0.5rem;
   }
 }
+
 
 
 @media(min-width: 430px) {
@@ -316,6 +319,7 @@ main {
   }
 }
 
+
 @media(min-width: 600px) {
   h1 {
     font-size: 5.7rem;
@@ -325,7 +329,7 @@ main {
   .start-new-game-btn {
     font-size: 2.8rem;
     padding: 0rem 1.1rem;
-    top: 31rem;
+    top: 35rem;
   }
 
   .monitor.left, .monitor.right {
@@ -372,7 +376,7 @@ main {
   .start-new-game-btn {
     font-size: 2.8rem;
     padding: 0rem 1.1rem;
-    top: 42rem;
+    top: 35rem;
   }
 
   .monitor.left, .monitor.right {
@@ -388,7 +392,7 @@ main {
   }
 
   .announcements {
-    font-size: 2.3rem;
+    font-size: 3.1rem;
     color: darksalmon;
     padding-top: 9rem;
     white-space: nowrap;
@@ -397,6 +401,11 @@ main {
   .controls-container {
     gap: 1rem;
     margin-top: 2rem;
+  }
+
+  .rps--button {
+    width: 6.5rem;
+    height: 6.5rem;
   }
 
   .monitor-left-para, .monitor-right-para {
@@ -411,3 +420,264 @@ main {
 }
 
 
+@media(min-width: 1200px) {
+  h1 {
+    font-size: 6.7rem;
+    text-shadow: black 5px 2px;
+  }
+
+  .start-new-game-btn {
+    font-size: 2.8rem;
+    padding: 0rem 1.1rem;
+    top: 42rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 26.3rem;
+  }
+
+  .monitor {
+    height: 22rem;
+  }
+
+  .container {
+    gap: 6%;
+  }
+
+  .announcements {
+    font-size: 3.2rem;
+    color: darksalmon;
+    padding-top: 9rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 1rem;
+    margin-top: 2.3rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 2.9rem;
+  }
+
+  .monitor-left-points-span, 
+  .monitor-right-points-span {
+    font-size: 2.6rem;
+    margin-left: 2.7rem;
+  }
+}
+
+
+@media(min-width: 1800px) {
+  h1 {
+    font-size: 8.7rem;
+    text-shadow: black 5px 2px;
+  }
+
+  .start-new-game-btn {
+    font-size: 2.8rem;
+    padding: 0rem 1.1rem;
+    top: 50rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 32.3rem;
+  }
+
+  .monitor {
+    height: 26rem;
+  }
+
+  .container {
+    gap: 6%;
+  }
+
+  .announcements {
+    font-size: 3.2rem;
+    color: darksalmon;
+    padding-top: 9rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 2.9rem;
+  }
+
+  .monitor-left-points-span, 
+  .monitor-right-points-span {
+    font-size: 2.6rem;
+    margin-left: 2.7rem;
+  }
+}
+
+
+/* Landscape orientation */
+@media (orientation: landscape) and (max-width: 1000px) {
+  h1 {
+    font-size: 3.7rem;
+    text-shadow: black 5px 2px;
+  }
+
+  main {
+    min-height: 100vh;
+    max-width: 90%;
+    padding-top: 5px;
+    margin: 0 auto;
+  }
+
+  .start-new-game-btn {
+    font-size: 2.3rem;
+    padding: 0rem 0.8rem;
+    top: 17rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 9.3rem;
+  }
+
+  .monitor {
+    height: 8rem;
+  }
+
+  .container {
+    gap: 0.7rem;
+    min-width: 98%;
+  }
+
+  .announcements {
+    position: relative;
+    font-size: 1.6rem;
+    color: darksalmon;
+    top: -8.4rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 1rem;
+    margin-top: -7rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 1.1rem;
+  }
+
+  .monitor-left-points-span, 
+  .monitor-right-points-span {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+}
+
+
+@media (orientation: landscape) and (min-width: 1001px) {
+  h1 {
+    font-size: 5.7rem;
+    text-shadow: black 5px 2px;
+  }
+
+  main {
+    min-height: 100vh;
+    max-width: 60%;
+    padding-top: 15.9px;
+    margin: 0 auto;
+  }
+
+  .start-new-game-btn {
+    font-size: 2.8rem;
+    padding: 0rem 1.1rem;
+    top: 38rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 20.3rem;
+  }
+
+  .monitor {
+    height: 17rem;
+  }
+
+  .container {
+    gap: 6%;
+  }
+
+  .announcements {
+    font-size: 3.2rem;
+    color: darksalmon;
+    padding-top: 9rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 2.2rem;
+  }
+
+  .monitor-left-points-span, .monitor-right-points-span {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+  }
+}
+
+
+
+@media (orientation: landscape) and (min-width: 1940px) {
+  h1 {
+    font-size: 5.7rem;
+    text-shadow: black 5px 2px;
+  }
+
+  main {
+    min-height: 100vh;
+    max-width: 60%;
+    padding-top: 15.9px;
+    margin: 0 auto;
+  }
+
+  .start-new-game-btn {
+    font-size: 3.8rem;
+    padding: 0rem 1.1rem;
+    top: 51rem;
+  }
+
+  .monitor.left, .monitor.right {
+    min-width: 33.3rem;
+  }
+
+  .monitor {
+    height: 28rem;
+  }
+
+  .container {
+    gap: 6%;
+  }
+
+  .announcements {
+    font-size: 3.2rem;
+    color: darksalmon;
+    padding-top: 9rem;
+    white-space: nowrap;
+  }
+
+  .controls-container {
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .monitor-left-para, .monitor-right-para {
+    font-size: 3.8rem;
+  }
+
+  .monitor-left-points-span, .monitor-right-points-span {
+    font-size: 3.3rem;
+    margin-left: 1.5rem;
+  }
+}

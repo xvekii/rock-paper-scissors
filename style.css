@@ -36,7 +36,6 @@ main {
 }
 
 .monitor {
-  /* max-width: 80%; */
   border: 5px solid rgb(32 37 67);
   background-color: rgba(84, 93, 112, 0.42);
   width: 4rem;
@@ -368,6 +367,7 @@ main {
     margin-left: 0.8rem;
   }
 }
+
 
 @media(min-width: 1000px) {
   h1 {

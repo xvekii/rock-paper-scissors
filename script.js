@@ -1,5 +1,3 @@
-
-// "Computer": randomly returns "rock" "paper" "scissors"
 const arr = ["rock", "paper", "scissors"];
 
 const MONITOR_WIN_COLOR = "rgba(6, 214, 160, 0.3)";
@@ -27,6 +25,7 @@ const announcementsDiv = document.querySelector(".announcements");
 
 let playerScore = 0;
 let computerScore = 0;
+
 
 document.addEventListener("DOMContentLoaded", () => {
   startNewGameBtn.addEventListener("click", () => {

@@ -138,6 +138,7 @@ main {
   font-style: normal;
   font-weight: 400;
   font-size: 2.5rem;
+  white-space: nowrap;
   color: darksalmon;
   user-select: none;
 }
@@ -564,15 +565,19 @@ main {
 
   .announcements {
     position: relative;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: darksalmon;
-    top: -8.4rem;
-    white-space: nowrap;
+    top: -2rem;
   }
 
   .controls-container {
     gap: 1rem;
-    margin-top: -7rem;
+    margin-top: -1rem;
+  }
+
+  .rps--button {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .monitor-left-para, .monitor-right-para {

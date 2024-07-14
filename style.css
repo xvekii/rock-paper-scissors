@@ -115,6 +115,7 @@ main {
   font-style: normal;
   font-weight: 400;
   font-size: 4rem;
+  white-space: nowrap;
   background-color: #FFD166;
   color: black;
   cursor: pointer;
@@ -329,7 +330,7 @@ main {
   .start-new-game-btn {
     font-size: 2.8rem;
     padding: 0rem 1.1rem;
-    top: 35rem;
+    top: 32rem;
   }
 
   .monitor.left, .monitor.right {
@@ -347,13 +348,13 @@ main {
   .announcements {
     font-size: 2.3rem;
     color: darksalmon;
-    padding-top: 9rem;
+    padding-top: 3rem;
     white-space: nowrap;
   }
 
   .controls-container {
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .monitor-left-para, .monitor-right-para {
@@ -411,8 +412,8 @@ main {
   }
 
   .rps--button {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
   }
 
   .monitor-left-para, .monitor-right-para {
@@ -440,11 +441,11 @@ main {
   }
 
   .monitor.left, .monitor.right {
-    min-width: 18.3rem;
+    min-width: 19.3rem;
   }
 
   .monitor {
-    height: 15rem;
+    height: 16rem;
   }
 
   .container {

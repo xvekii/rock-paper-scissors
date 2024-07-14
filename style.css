@@ -429,32 +429,32 @@ main {
 
 @media(min-width: 1200px) {
   h1 {
-    font-size: 6.7rem;
+    font-size: 6.1rem;
     text-shadow: black 5px 2px;
   }
 
   .start-new-game-btn {
     font-size: 2.8rem;
     padding: 0rem 1.1rem;
-    top: 42rem;
+    top: 31rem;
   }
 
   .monitor.left, .monitor.right {
-    min-width: 26.3rem;
+    min-width: 18.3rem;
   }
 
   .monitor {
-    height: 22rem;
+    height: 15rem;
   }
 
   .container {
-    gap: 6%;
+    gap: 3%;
   }
 
   .announcements {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     color: darksalmon;
-    padding-top: 9rem;
+    padding-top: 3rem;
     white-space: nowrap;
   }
 
@@ -463,13 +463,18 @@ main {
     margin-top: 2.3rem;
   }
 
+  .rps--button {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
   .monitor-left-para, .monitor-right-para {
-    font-size: 2.9rem;
+    font-size: 1.8rem;
   }
 
   .monitor-left-points-span, 
   .monitor-right-points-span {
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     margin-left: 2.7rem;
   }
 }

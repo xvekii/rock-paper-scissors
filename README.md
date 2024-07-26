@@ -7,6 +7,9 @@ The game was built as a part of The Odin Project.
 - build the logic for the game to be played in the console first
 - then build the GUI and refactor the code
 
+## Credits
+- hands SVGs (rock, paper, scissors) from [freesvg.org](https://freesvg.org/rock-paper-scissors) (CC0 1.0 Public Domain)
+
 ## Screenshots
 ### Starting screens
 <img width="1312" alt="Screenshot of the starting screen of the game" src="https://github.com/user-attachments/assets/5532f0a9-ae28-4b63-ac38-3252275fec31">

@@ -175,7 +175,6 @@ function announceRoundWinner(string) {
   }, 500);
 }
 
-
 function game(result) {  
   let announcementString = "";
   if (result == "playerWin") {
@@ -185,7 +184,6 @@ function game(result) {
     playerScore++;
     updatePoints(playerScore, computerScore);
     removeAnnouncement();
-    console.log(playerScore);
   } else if (result == "computerWin") {
     announcementString = "Computer Wins!";
     changeMonitorColorComputerWin();
@@ -200,6 +198,7 @@ function game(result) {
     removeAnnouncement();
   }
   
+  // Announces the total winner
   if (computerScore > playerScore && computerScore === 5) {
     hideControls();
     announcementString = "Mwahahaha! 👾🤖👾";
@@ -211,13 +210,7 @@ function game(result) {
     announcementString = "You're The Best! 🍉🥳🍉";
     announceRoundWinner(announcementString);
     showStartGame();
-  
-  } else if (playerScore === 5 && computerScore === 5) {
-    hideControls();
-    announcementString = "The Game Is Tied!"
-    announceRoundWinner(announcementString);
-    showStartGame();
-  }
+  } 
 } 
 
 function updatePoints(playerScore, computerScore) {
@@ -225,7 +218,7 @@ function updatePoints(playerScore, computerScore) {
   const computerPoint = "👾";
   setTimeout(() => {
     monitorLeftPointsSpan.textContent = `${userPoint.repeat(playerScore)}`;
-  monitorRightPointsSpan.textContent = `${computerPoint.repeat(computerScore)}`;
+    monitorRightPointsSpan.textContent = `${computerPoint.repeat(computerScore)}`;
   }, 1600);
 }
 
